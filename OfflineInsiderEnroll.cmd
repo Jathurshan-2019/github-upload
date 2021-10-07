@@ -160,6 +160,8 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsSelfHost\UI\Selection" /f 
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsSelfHost\UI\Selection" /f /t REG_DWORD /v UIUsage /d 26
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsSelfHost\UI\Selection" /f /t REG_DWORD /v OptOutState /d 25
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsSelfHost\UI\Selection" /f /t REG_DWORD /v AdvancedToggleState /d 24
+
+if %build% LSS 21390 goto :EOF
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup" /t REG_DWORD /v AllowUpgradesWithUnsupportedTPMOrCPU /d 1 /f
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\Setup\WindowsUpdate" /t REG_DWORD /v AllowWindowsUpdate /d 1 /f
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig" /t REG_DWORD /v BypassTPMCheck /d 1 /f
